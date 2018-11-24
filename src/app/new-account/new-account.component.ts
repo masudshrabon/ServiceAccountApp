@@ -1,3 +1,4 @@
+import { LoggingService } from './../services/logging.service';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
@@ -19,6 +20,8 @@ export class NewAccountComponent implements OnInit {
       name: accountName,
       status: accountStatus
     });
-    console.log('A server status changed, new status: ' + accountStatus);
+    const loggingService = new LoggingService();
+    loggingService.logStatusChanged(accountStatus);
+   // console.log('A server status changed, new status: ' + accountStatus);
   }
 }
