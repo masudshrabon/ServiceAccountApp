@@ -1,16 +1,17 @@
-import { LoggingService } from './../services/logging.service';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { LoggingService } from './../services/logging.service';
 
 @Component({
   selector: 'app-new-account',
   templateUrl: './new-account.component.html',
-  styleUrls: ['./new-account.component.css']
+  styleUrls: ['./new-account.component.css'],
+  providers: [LoggingService]
 })
 export class NewAccountComponent implements OnInit {
 
   @Output() accountAdded = new EventEmitter<{name: string, status: string}>();
 
-  constructor() { }
+  constructor(private loggingService: LoggingService) { }
 
   ngOnInit() {
   }
@@ -20,8 +21,10 @@ export class NewAccountComponent implements OnInit {
       name: accountName,
       status: accountStatus
     });
-    const loggingService = new LoggingService();
-    loggingService.logStatusChanged(accountStatus);
-   // console.log('A server status changed, new status: ' + accountStatus);
+
+    this.loggingService.logStatusChanged(accountStatus);
+    // const loggingService = new LoggingService();
+    // loggingService.logStatusChanged(accountStatus);
+    // console.log('A server status changed, new status: ' + accountStatus);
   }
 }
