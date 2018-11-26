@@ -14,6 +14,7 @@ import { Injectable, EventEmitter } from '@angular/core';
  *
  * @Injectable() is used in the place WHERE something is injected (who will receive the services (AccountsService)),
  * but NOT in the place of Which service (LoggingService) is injected.
+ * Another thing means that, it has dependencies.
  */
 @Injectable()
 export class AccountsService {
