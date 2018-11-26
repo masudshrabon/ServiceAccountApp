@@ -6,7 +6,7 @@ import { AccountsService } from '../services/accounts.service';
   selector: 'app-account',
   templateUrl: './account.component.html',
   styleUrls: ['./account.component.css'],
-  providers: [LoggingService]
+  // providers: [LoggingService]
 })
 export class AccountComponent implements OnInit {
 
@@ -22,7 +22,7 @@ export class AccountComponent implements OnInit {
   onSetTo(status: string) {
     this.accountsService.updateStatus(this.id, status);
 
-    this.loggingService.logStatusChanged(status);
+    // this.loggingService.logStatusChanged(status);
     // console.log('A server status changed, new status: ' + status);
   }
 
