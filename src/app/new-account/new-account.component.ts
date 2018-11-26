@@ -25,7 +25,7 @@ export class NewAccountComponent implements OnInit {
 
     /** Instead of creating an instance of LoggingService manually, just inject it.
      * Angular is responsible to create and pass the instance of the service as defined in the constructor and provider attribute.
-    */
+     */
     // this.loggingService.logStatusChanged(accountStatus);
     // const loggingService = new LoggingService();
     // loggingService.logStatusChanged(accountStatus);
